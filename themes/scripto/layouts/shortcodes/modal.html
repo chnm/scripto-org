@@ -1,0 +1,5 @@
+<button type="button" class="button" data-open="{{.Get "id"}}">View sample guidelines</button>
+
+<div class="reveal" id="{{.Get "id"}}" data-reveal>
+    {{ .Inner | markdownify }}
+</div>

@@ -1,0 +1,4 @@
+baseURL = "https://scripto.org"
+languageCode = "en-us"
+title = "Scripto"
+theme = "scripto"

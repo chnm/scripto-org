@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    {{- partial "head.html" . -}}
+    <body>
+        {{- partial "header.html" . -}}
+        <div id="content">
+
+            {{ with .Site.GetPage "/home" }}
+            <div id="intro" class="grid-container">
+                <div class="grid-x">
+                    <div class="cell">
+                      <h1>{{ .Site.Title }}</h1>
+                      <div class="subtitle">{{ .Content }}</div>
+                    </div>
+                    <div id="omeka-classic" class="cell medium-6">
+                        <h2>Scripto for <span class="platform">Omeka Classic</span></h2>
+                        <a href="https://omeka.org/classic/plugins/Scripto/" class="download button">Download <span class="version"></span></a>
+                        <a href="https://omeka.org/classic/docs/Plugins/Scripto/" class="user-manual button">User Manual</a>
+                    </div>
+                    <div id="omeka-s" class="cell medium-6">
+                        <h2>Scripto for <span class="platform">Omeka S</span></h2>
+                        <a href="https://omeka.org/s/modules/scripto/" class="download button">Download <span class="version"></span></a>
+                        <a href="https://omeka.org/s/docs/user-manual/modules/scripto/" class="user-manual button">User Manual</a>
+                    </div>
+                </div>
+            </div>
+            {{ end }}
+
+
+            {{ with .Site.GetPage "/home" }}
+            {{ $home := . }}
+            {{ $pages := .Resources.ByType "page" }}
+    
+            {{ with .Site.GetPage "/news" }}
+                {{ $pages = $pages | append . }}
+            {{ end }}
+    
+            {{ range sort $pages "Params.weight" }}
+            {{ if .File }}
+            {{ if eq (os.Stat .File.Dir).Name "news" }}
+                <!-- Let`s show some blog posts -->
+                {{ partial "home/blog.html" . }}
+            {{ else }}
+            
+            <div id="{{ .File.TranslationBaseName }}" class="grid-container section">
+                <div class="grid-x gutter-padding-x">
+                      <h2 class="cell">{{ .Title }}</h2>
+                      <div class="content cell">{{ .Content }}</div>
+                </div>
+            </div>
+            {{ end }}
+            {{ end }}
+            {{ end }}
+            {{ end }}
+
+
+        </div>
+        {{- partial "footer.html" . -}}
+    </body>
+</html>

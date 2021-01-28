@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css?family=Cantata+One|Poppins:400,400i,600,600i&display=swap');
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Cantata One", serif;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #fefef5;
+  color: #404040;
+}
+
+nav {
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #fefef5;  
+}
+
+nav:after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  height: 3rem;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to bottom, #fefef5, rgba(0,0,0,0));
+}
+
+
+nav ul {
+  list-style: none;
+  margin: auto;
+  display: block;
+}
+
+nav ul li {
+  display: inline-block;
+  margin: 1rem 1rem 0;
+}
+
+.button {
+  background-color: #386890;
+  font-weight: 600;
+}
+
+.section {
+  border-top: 1px solid #ccc;
+  padding: 5rem 0;
+}
+
+@media screen and (max-width:640px) {
+  #intro, 
+  .section {
+    padding: 7rem 0;
+  }
+}
+
+.section h2.cell {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+#intro .grid-x {
+  min-height: 90vh;
+  align-items: center;
+  text-align: center;
+}
+
+#intro h1 {
+  text-indent: -9999px;
+  background-image: url('../img/logo.svg');
+  width: 75%;
+  padding-bottom: 30%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  margin: auto;
+}
+
+#intro h2 {
+  font-size: 1.5rem;
+}
+
+#omeka-s,
+#omeka-classic {
+  text-align: center;
+}
+
+.platform {
+  display: block;
+  font-size: 1.75rem;
+}
+
+#staff {
+  text-align: center;
+}
+
+#staff strong {
+  display: block;
+}
+
+footer {
+  margin: auto;
+}
+
+.logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.logos a {
+  margin: 1rem;
+}
+
+.logos a,
+.logos img {
+  display: block;
+  height: 4rem;
+  width: auto;
+}
+
+.logos a.rrchnm,
+.logos a.rrchnm img {
+  height: 3rem;
+}
+
+.logos a.nhprc,
+.logos a.nhprc img {
+  height: 6rem;
+}
+
+.copyright {
+  display: block;
+  text-align: center;
+  margin: 1rem;
+}
